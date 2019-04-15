@@ -7,48 +7,54 @@ Fazer um jogo de RPG de texto estilo anos 80
 #Mapa onde o jogo acontece. Fácilmente expandido,
 #formato:
 #Mapa={
-# 'Nome do lugar': (
+# 'Nome do lugar': [
 #   '''Descrição do lugar, e de algumas possiveis
 #   opcoes''',
 #   [opções]
-#)
+#]
 #}
-
+import json
+from pprint import pprint
 
 Mapa = {
-'CalabouçoInicial': (
+'CalabouçoInicial': [
+        'Você está num calabouço, escuro e úmido. Não consegue ver muito longe.',
+        ['cima','baixo']
+    ],
+'Sala 1': [
         'Carai',
         ['cima','baixo']
-    ),
-'Calabouço': (
+    ],
+'Sala 2': [
         'Carai',
         ['cima','baixo']
-    ),
-'Calabouço2': (
+    ],
+'Sala 3': [
         'Carai',
         ['cima','baixo']
-    ),
-'Calabouço3': (
+    ],
+'Sala 4': [
         'Carai',
         ['cima','baixo']
-    ),
-'Calabouço4': (
+    ],
+'Sala 5': [
         'Carai',
         ['cima','baixo']
-    ),
-'Calabouço5': (
+    ],
+'Sala 6': [
         'Carai',
         ['cima','baixo']
-    ),
-'Calabouço6': (
+    ],
+'Sala 7': [
         'Carai',
         ['cima','baixo']
-    ),
-'Calabouço7': (
+    ],
+'Sala 8': [
         'Carai',
         ['cima','baixo']
-    ),
+    ],
 }
-print(Mapa)
+pprint(Mapa)
+
 
 
