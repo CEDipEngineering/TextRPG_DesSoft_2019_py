@@ -6,10 +6,8 @@ Fazer um jogo de RPG de texto estilo anos 80
 """
 import random 
 from pprint import pprint
-Player={
-    'Life':200,
-    'Attack':20        
-}
+from Mapa import Mapa
+from Main import Player
 
 #%%
 
@@ -125,10 +123,19 @@ def Attack(Attacker, Target, is_player):
 #Retorna None, e imprime o resultado do ataque.
 
 #%%
-lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
-teste=RunCombat(CombatDict(lista_teste))
-pprint(teste)
     
+def Move(key):
+    position=Mapa[key]
+    print(position[0])
+    print('Suas opções são {0}'.format(position[1]))
+    return None
+
+
+#%%
+#lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
+#teste=RunCombat(CombatDict(lista_teste))
+#pprint(teste)
+#    
 
     
 

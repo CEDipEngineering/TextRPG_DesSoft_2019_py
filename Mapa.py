@@ -18,10 +18,35 @@ from pprint import pprint
 
 Mapa = {
 'CalabouçoInicial': [
-        'Você está num calabouço, escuro e úmido. Não consegue ver muito longe.',
-        ['cima','baixo']
+        '''
+        Você está num calabouço, escuro e úmido. 
+        Não consegue ver muito longe.
+        Está com fome, e cansado.
+        Não se lembra como chegou aqui,
+        tudo que sabe, é seu nome, e que
+        algo, ou alguém o trouxe para cá.
+        Conforme recobra consciência, percebe
+        que suas mãos estão atadas.
+        Sem muito esforço, consegue libertar-se
+        de suas amarras e levantar-se.
+        ''',
+        {'Examinar': '''
+         Parece que há um baú de madeira no canto da sala.
+         As paredes são de pedra lisa, e você consegue ouvir
+         água gotejando no canto. De vez em quando ouve um rato
+         correndo por algum canto.
+         Há também uma porta de madeira meio enferujada 
+         entreaberta, que parece uma possível saída.
+         ''',
+         'Olhar baú':'''
+         Examine o baú no canto da sala.
+         ''',
+         'Sair pela porta':'''
+         Sair pela porta, e descobrir o que o aguarda
+         fora desta sala imunda.
+         '''}
     ],
-'Sala 1': [
+'Calabouço': [
         'Carai',
         ['cima','baixo']
     ],
