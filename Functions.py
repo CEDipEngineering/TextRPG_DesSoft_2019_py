@@ -4,23 +4,15 @@ Created on Mon Apr  8 09:51:49 2019
 Fazer um jogo de RPG de texto estilo anos 80
 @author: Carlos Dip
 """
-#Mapa onde o jogo acontece. Fácilmente expandido,
-#formato:
-#Mapa={
-# 'Nome do lugar': [
-#   '''Descrição do lugar, e de algumas possiveis
-#   opcoes''',
-#   [opções]
-#]
-#}
 import random 
 from pprint import pprint
 
 #%%
+
 #Funcão para rolar um D20
 def RollNum():
-    return random.randint(0,20)
-
+    return random.randint(1,20)
+#Não tem entradas, returna diretamente um número inteiro de 1 a 20 (inclusivo)
 #%%
 
 #Funcão para criar um monstro, dados sua vida, dano por golpe e identificador.
@@ -30,12 +22,11 @@ def CreateMonster(Life,Attack):
         'Life':Life
     }   
     return Monster
+#Entra 2 atributos, Life e Attack de um monstro. Em seguida cria um dicionário, com os atributos do monstro, e o retorna. 
 
 #%%
 
-#ListAttrMonsters = Lista de dimensões NumMonsters x 3, 
-#onde cada elemento consiste na vida e attack de cada monstro, seguido de seu id
-#como em [100, 8, 'Goblin 1'], cria-se um monstro, chamado Goblin 1, com 100 de vida e 8 de dano. 
+#Função para iniciar dicionário de combate. 
 def CombatDict(ListAttrMonsters):  
     Combat=dict()
     for index,monster in enumerate(ListAttrMonsters): #Loop para criar monstros e colocá-los no dicionário Combat.
@@ -45,11 +36,12 @@ def CombatDict(ListAttrMonsters):
         id_=this_monster[2]
         Combat[id_]=CreateMonster(Life,Attack)
     return Combat
+#Entra uma lista contendo listas, as quais possuem, em ordem, a vida, dano e identificador de um monstro. Para cada lista dentro da principal, será criado um monstro.
+#Cada monstro é colocado num dicionário, que é retornado.
 
 #%%
 
-#Função que recebe um dicionário de combate (ver CombatDict), e então roda o combate, 
-#até que todos os monstros morram, o player morra, ou o player fuja.
+#Função para rodar o combate.
 def RunCombat(Combat):
     Combat['Player']=Player # Coloca o jogador no dicionário
     fight_on=True
@@ -79,21 +71,26 @@ def RunCombat(Combat):
                     k.remove('Player')
                     Attack(Combat[Player],k)
         
-    
+#Recebe um dicionário de combate (ver CombatDict), e então roda o combate, 
+#até que todos os monstros morram, o player morra, ou o player fuja.  
 
 #%%
+#Função responsável pela ação de atacar.
 def Attack(Attacker, Target):
     Roll=RollNum()
     if Roll==20: # Acerto Crítico!
         Target['Life']-=2*Attacker['Attack']
-        outputText='Você rolou ' + str(Roll) + 'e teve um acerto crítico, causando ' + str(2*Attacker['Attack']) + 'de dano!' 
+        outputText= Attacker + ' rolou ' + str(Roll) + 'e teve um acerto crítico, causando ' + str(2*Attacker['Attack']) + 'de dano!' 
     elif Roll>10: # Acerto normal
         Target['Life']-=Attacker['Attack']
-        outputText='Você rolou ' + str(Roll) + 'e teve um acerto crítico, causando ' + str(Attacker['Attack']) + 'de dano!' 
+        outputText=Attacker + ' rolou ' + str(Roll) + 'e teve um acerto crítico, causando ' + str(Attacker['Attack']) + 'de dano!' 
     else: #Erro
-        outputText='Você errou!'
-        return outputText
-                        
+        outputText=Attacker + ' errou!'
+    if Target['Life']<=0 and Target!='Player': #Se o alvo morreu
+        del Combat[Target]
+    return outputText
+#Recebe duas Strings, uma é o atacante, e outra o atacado, e ambas são chaves no dicionário de combate.
+#Retorna o resultado da tentativa de ataque.
 
 #%%
 #lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
