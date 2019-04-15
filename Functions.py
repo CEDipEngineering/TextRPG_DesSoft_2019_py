@@ -6,6 +6,10 @@ Fazer um jogo de RPG de texto estilo anos 80
 """
 import random 
 from pprint import pprint
+Player={
+    'Life':200,
+    'Attack':20        
+}
 
 #%%
 
@@ -45,56 +49,87 @@ def CombatDict(ListAttrMonsters):
 def RunCombat(Combat):
     Combat['Player']=Player # Coloca o jogador no dicionário
     fight_on=True
+    mortos=[]
     while fight_on:
+        for defunto in mortos:
+            if defunto in Combat:
+                del Combat[defunto]
         for combatant, attributes in Combat.items():
-            
-            #Player Turn
-            if combatant == 'Player':
-                ask=input('Quer atacar ou fugir? ')
-                
-                # Fugir!
-                if ask == 'fugir':
-                    if RollNum()>=11:
-                        fight_on=False
-                        break
+            if Combat[combatant]['Life']>0:
+                print('Agora é o turno de ' + combatant)
+                #Player Turn
+                if combatant == 'Player' and Player['Life']>0:
+                    pprint(Combat)
+                    ask=input('Quer atacar ou fugir? ')
+                    # Fugir!
+                    if ask == 'fugir':
+                        if RollNum()>=11:
+                            fight_on=False
+                            return 'Você escapou!'
+                        else:
+                            print('Você não conseguiu escapar!')
+                    
+                    
+                    #Não fugir!
                     else:
-                        print('Você não conseguiu escapar!')
+                        choose=True
+                        while choose:
+                            target=input('Quem você gostaria de atacar? ')
+                            if target in Combat:
+                                Attack(Combat['Player'] ,Combat[target], True)
+                                choose=False
+                            else:
+                                print('Acho que você escreveu errado; Esse alvo não existe, ou já morreu!')
+                                print('Tente escolher de novo.')
+                #Monster Turn
+                if combatant != 'Player':
+                    Roll=RollNum()
+                    if Roll>=5:
+                        print(combatant + ' decidiu atacar você!')
+                        Attack(Combat[combatant],Combat['Player'],False)
+                    else:
+                        print('{0} está confuso e passou seu turno procurando alguma coisa para fazer!'.format(combatant))
+            else:
+                mortos.append(combatant)
                 
-                
-                #Não fugir!
-                elif len(Combat)>2: #Se o jogador não está lutando com só um monstro:
-                    target=input('Quem você gostaria de atacar? ')
-                    if target in Combat:
-                        Attack(Combat[Player],Combat[target])
-                else:
-                    k=Combat.keys()
-                    k.remove('Player')
-                    Attack(Combat[Player],k)
-        
 #Recebe um dicionário de combate (ver CombatDict), e então roda o combate, 
 #até que todos os monstros morram, o player morra, ou o player fuja.  
 
 #%%
 #Função responsável pela ação de atacar.
-def Attack(Attacker, Target):
+def Attack(Attacker, Target, is_player):
     Roll=RollNum()
-    if Roll==20: # Acerto Crítico!
-        Target['Life']-=2*Attacker['Attack']
-        outputText= Attacker + ' rolou ' + str(Roll) + 'e teve um acerto crítico, causando ' + str(2*Attacker['Attack']) + 'de dano!' 
-    elif Roll>10: # Acerto normal
-        Target['Life']-=Attacker['Attack']
-        outputText=Attacker + ' rolou ' + str(Roll) + 'e teve um acerto crítico, causando ' + str(Attacker['Attack']) + 'de dano!' 
-    else: #Erro
-        outputText=Attacker + ' errou!'
-    if Target['Life']<=0 and Target!='Player': #Se o alvo morreu
-        del Combat[Target]
-    return outputText
-#Recebe duas Strings, uma é o atacante, e outra o atacado, e ambas são chaves no dicionário de combate.
-#Retorna o resultado da tentativa de ataque.
+    if is_player:
+        if Roll==20: # Acerto Crítico!
+            Target['Life']-=2*Attacker['Attack']
+            outputText=  'Seu rolamento foi ' + str(Roll) + 'e teve um acerto crítico, causando ' + str(2*Attacker['Attack']) + ' de dano!' 
+        elif Roll>5: # Acerto normal
+            Target['Life']-=Attacker['Attack']
+            outputText='Seu rolamento foi ' + str(Roll) + ' causando ' + str(Attacker['Attack']) + ' de dano!' 
+        else: #Erro
+            outputText='Seu alvo desviou!'
+        print(outputText)
+    else:
+        if Roll==20: # Acerto Crítico!
+            Target['Life']-=2*Attacker['Attack']
+            outputText=  'O rolamento dele foi ' + str(Roll) + 'e teve um acerto crítico, causando ' + str(2*Attacker['Attack']) + ' de dano!' 
+        elif Roll>10: # Acerto normal
+            Target['Life']-=Attacker['Attack']
+            outputText='O rolamento dele foi ' + str(Roll) + ' causando ' + str(Attacker['Attack']) + ' de dano!' 
+        else: #Erro
+            outputText='Você desviou!'
+        print(outputText)
+    return None
+#Recebe dois dicionários, um com os dados do atacante, e outro do atacado,
+#seguidos de uma booleana que diz se é o player atacando.
+#Retorna None, e imprime o resultado do ataque.
 
 #%%
-#lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
-#pprint(CombatDict(lista_teste))
+lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
+teste=RunCombat(CombatDict(lista_teste))
+pprint(teste)
+    
+
     
 
 
