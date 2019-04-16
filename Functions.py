@@ -8,7 +8,7 @@ import random
 from pprint import pprint
 from Mapa import Mapa
 from Main import Player
-
+import time
 #%%
 
 #Funcão para rolar um D20
@@ -55,6 +55,7 @@ def RunCombat(Combat):
         for combatant, attributes in Combat.items():
             if Combat[combatant]['Life']>0:
                 print('Agora é o turno de ' + combatant)
+                time.sleep(1)
                 #Player Turn
                 if combatant == 'Player' and Player['Life']>0:
                     pprint(Combat)
@@ -106,6 +107,7 @@ def Attack(Attacker, Target, is_player):
             outputText='Seu rolamento foi ' + str(Roll) + ' causando ' + str(Attacker['Attack']) + ' de dano!' 
         else: #Erro
             outputText='Seu alvo desviou!'
+        time.sleep(1)
         print(outputText)
     else:
         if Roll==20: # Acerto Crítico!
@@ -116,6 +118,7 @@ def Attack(Attacker, Target, is_player):
             outputText='O rolamento dele foi ' + str(Roll) + ' causando ' + str(Attacker['Attack']) + ' de dano!' 
         else: #Erro
             outputText='Você desviou!'
+        time.sleep(1)
         print(outputText)
     return None
 #Recebe dois dicionários, um com os dados do atacante, e outro do atacado,
@@ -127,7 +130,8 @@ def Attack(Attacker, Target, is_player):
 def Move(key):
     position=Mapa[key]
     print(position[0])
-    print('Suas opções são {0}'.format(position[1]))
+    time.sleep(1)
+    print('Suas opções são {0}. (Coloque sua resposta exatamente como está escrito, ignorando espaços e o que estiver em parênteses)'.format(position[1]))
     return None
 
 
