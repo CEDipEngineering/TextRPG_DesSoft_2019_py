@@ -6,9 +6,13 @@ Fazer um jogo de RPG de texto estilo anos 80
 """
 import random 
 from pprint import pprint
-from Mapa import Mapa
-from Main import Player
+#from Mapa import Mapa
+#from Main import Player
 import time
+Player= {
+    'Life': 200,
+    'Attack': 20
+}
 #%%
 
 #Funcão para rolar um D20
@@ -48,6 +52,7 @@ def RunCombat(Combat):
     Combat['Player']=Player # Coloca o jogador no dicionário
     fight_on=True
     mortos=[]
+    pprint(Combat)
     while fight_on:
         for defunto in mortos:
             if defunto in Combat:
@@ -143,7 +148,7 @@ def Move(key):
 #while Move(x)!=1:
 #    x = Move(input())
 #print(position)
-#lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
-#teste=RunCombat(CombatDict(lista_teste))
-#pprint(teste)
+lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
+teste=RunCombat(CombatDict(lista_teste))
+pprint(teste)
 #    
