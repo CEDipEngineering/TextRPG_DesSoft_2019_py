@@ -21,5 +21,4 @@ if game_on:
     position=[]
     fn.Move('CalabouçoInicial')
 #    while game_on:
-#        
 #        break

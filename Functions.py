@@ -136,12 +136,14 @@ def Move(key):
 
 
 #%%
+
+#position=[Mapa['CalabouçoInicial']]
+#print(position)
+#x = Move(input())
+#while Move(x)!=1:
+#    x = Move(input())
+#print(position)
 #lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
 #teste=RunCombat(CombatDict(lista_teste))
 #pprint(teste)
 #    
-
-    
-
-
-

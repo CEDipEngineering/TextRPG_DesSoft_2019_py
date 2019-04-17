@@ -28,8 +28,7 @@ Mapa = {
         Sem muito esforço, consegue libertar-se
         de suas amarras e levantar-se.
         ''',
-        ['Examinar (A sala)',
-         'Abrir_Bau',
+        ['Bau (Abre o baú no canto)',
          'Corredor1 (Abrir a porta)']
     ],
 'Corredor1': [
@@ -76,7 +75,7 @@ Mapa = {
         Porém entre você e a porta, existe um mar de rochas
         fluorescentes e lama.
         ''',
-        ['Porta (Avançar pela sala na direção da porta)',
+        ['Sala3 (Avançar pela sala na direção da porta)',
          'Fininho (Avançar com cuidado pelos cantos da sala na direção da porta)',
          'Sala2 (Voltar)'],
     ],
@@ -93,7 +92,7 @@ Mapa = {
         de ácido. Provavelmente não é uma boa ideia tocar nisso.
         Do outro lado, você vê uma porta de saída.
         ''',
-        ['Porta (Avançar pela sala na direção da porta)',
+        ['Sala3 (Avançar pela sala na direção da porta)',
          'Sala2 (Voltar)'],
     ],
 'Choque': [
@@ -108,23 +107,58 @@ Mapa = {
         Tão belos quanto mortais.
         Ao fim da sala, parece haver uma porta de saída.
         ''',
-        ['Porta (Avançar pela sala na direção da porta)',
+        ['Sala3 (Avançar pela sala na direção da porta)',
          'Sala2 (Voltar)'],
     ],
-'Sala 6': [
+'PortaSecreta': [
         '''
+        Passando pela porta, você encontra uma sala
+        muito estranaha, nela, todas as paredes são brancas,
+        tão brancas que parecem até iluminadas,
+        e sentado numa mesa no meio dessa sala, dois
+        rapazes atrás de mesas, estão fazendo alguma coisa,
+        cada um em seu laptop.
+        Quando um deles te percebe, ele diz para o outro,
+        num tom de sussurro, "Ei Dip, acho que alguém escapou...",        
+        E o outro responde, sem nem olhar, "Pfft, você está brincando, Ed?
+        Ninguém nunca coseguiu escap--" e antes de terminar sua frase,
+        seu colega o empurra com o cotovelo, alertando-o. Ele então
+        percebe sua presença, e um pouco desesperado, diz para você,
+        "Ahhm.. Ah! Grande guerreiro! Você está só sonhando! Isso NÃO É REAL!
+        Não se preocupe! Tudo vai ficar bem!" e ele tenta, sutilmente,
+        avisar seu colega; "Rápido, tire ele daqui!", e o outro colega responde,
+        "Mas para onde eu o mando?", e rapidamente é respondido "Sei lá, só mande
+        ele pra longe daqui!", eles então percebem que você ainda está lá, e que
+        agora está ficando um pouco impaciente, e então eles dizem, "Feroz, ehhhh... ,lutador,
+        conquistador de, hmm... ahhmm... mutantes!, ehhhhh...., tome aqui esse objeto mágico que
+        faz alguma coisa legal!", e ele toma da mesa uma miniatura de plástico humanóide, estranha,
+        e quando o faz, seu colega diz "Eeeeiii! Esse é meu action figure do Wolverine! Você sabe
+        quanto isso custou!?" e o outro responde com um rápido "Cala a boca, você quer que ele nos
+        mate!?" ele então, vira-se para você e diz: "Poderoso guerreiro, agora, continue em sua busca,
+        , por favor, só não nos machuque".
+        Eles então, o entregam essa miniatura de hominídeo, e você sente, suas feridas se fecham,
+        em frente a seus próprios olhos! Incrível!
         ''',
-        ['Abrir a porta',
-         'Voltar'],
+        [],
     ],
-'Sala 7': [
+'Sala3': [
         '''
+        Entrando por essa porta, você chega num grande salão, nele, você vê uma enorme linha
+        de produção, agora há muito desativada, com centenas de peças diferentes espalhadas por
+        esteiras que dão voltas e voltas, como as entranhas de uma gigantesca fera mecânica.
+        No fundo da sala, você vê um terminal, ainda acesso, e uma escada, para o topo da fábrica.
         ''',
-        ['Abrir a porta',
-         'Voltar'],
+        ['Escada (Subir escada)',
+         'Terminal (Acessar terminal)',
+         'Radiacao (Abre a porta para a sala da radiação)',
+         'Acido (Abre a porta para a sala do ácido)',
+         'Choque (Abre a porta para a sala do choque)'],
     ],
-'Sala 8': [
+'Bau': [
         '''
+        O baú é velho e enrustido. Ao abrí-lo, você
+        vê uma velha baioneta russa, usada na quarta guerra mundial,
+        e uma carta, que diz "É perigoso ir sozinho. Leve isso.".
         ''',
         ['Abrir a porta',
          'Voltar'],
