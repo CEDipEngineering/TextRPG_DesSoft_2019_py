@@ -5,8 +5,12 @@ Fazer um jogo de RPG de texto estilo anos 80
 @author: Carlos Dip
 """
 import Functions as fn
-from Mapa import Mapa
-
+from pprint import pprint
+import json
+with open('Mapa.txt','r') as Map:
+    conteudo=Map.read()
+    Mapa=json.loads(conteudo)
+#pprint(Mapa)
 Player = {
     'Life':200,
     'Attack':20        
@@ -21,4 +25,3 @@ if game_on:
     position=[]
     fn.Move('CalabouçoInicial')
 #    while game_on:
-#        break

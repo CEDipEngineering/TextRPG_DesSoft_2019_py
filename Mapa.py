@@ -1,20 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr  8 09:51:49 2019
-Fazer um jogo de RPG de texto estilo anos 80
-@author: Carlos Dip
-"""
-#Mapa onde o jogo acontece. Fácilmente expandido,
-#formato:
-#Mapa={
-# 'Nome do lugar': ['''
-#   Descrição do lugar
-#''',
-#   ['opção(descrição da opção)',
-#    'opção(descrição da opção)']
-#]
-#}
-Mapa = {
+{
 'CalabouçoInicial': [
         '''
         Você está num calabouço, escuro e úmido. 
@@ -164,7 +148,7 @@ Mapa = {
          'Voltar'],
     ],
 }
-#pprint(Mapa)
+
 
 
 
