@@ -84,11 +84,18 @@
         Nesta sala, antes mesmo de abrir a porta, você
         percebe uma leve luz, vazando pelo entorno desta.
         Resoluto, você abre a porta, e vê, 
-        o que te parece uma tespetade em primeiro olhar,
+        o que parece uma tespetade em primeiro olhar,
         mas na verdade não passam de bobinas de Tesla ativas.
         Dezenas delas. Tantas, que a sala parece estar iluminada
         somente pelos seus magníficos arcos elétricos.
-        Tão belos quanto mortais.
+        Tão belos quanto mortais. Porém, no meio de tantos perigos,
+        surge uma esperança, em um canto mais escuro em baixo e no lado esquerdo
+        do galpão, reflete um brilho. Sem se hesitar, você se aproxima desse então 
+        objeto brilhante e o mesmo, a cada vez mais que se aproxima,
+        se revela uma chave, e perto dela há uma mensagem cravada na parede
+        próxima: "Используйте, чтобы уйти отсюда.", sem ter ideia do que 
+        siginifica, você decide guardá-la pois, por que iriam escrever alguma coisa
+        para algo sem relevância?
         Ao fim da sala, parece haver uma porta de saída.
         ''',
         ['Sala3 (Avançar pela sala na direção da porta)',
