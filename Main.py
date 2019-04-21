@@ -13,7 +13,8 @@ with open('Mapa.txt','r') as Map:
 #pprint(Mapa)
 Player = {
     'Life':200,
-    'Attack':20        
+    'Attack':20,
+    'Inventário': []        
 }
 ask=input('Bem-vindo! Quer começar a jogar (s/n)? ')
 game_on = ask == 's'
