@@ -2,7 +2,7 @@
 """
 Created on Mon Apr  8 09:51:49 2019
 Fazer um jogo de RPG de texto estilo anos 80
-@author: Carlos Dip
+@author: Carlos Dip & Edgard Ortiz
 """
 import Functions as fn
 from pprint import pprint
@@ -25,3 +25,10 @@ if game_on:
     position=[]
     fn.Move('CalabouçoInicial')
 #    while game_on:
+#inventário:
+Itens = ['Baioneta', 'Chave', 'Wolverine']
+for e in Itens:
+    if e == 'Baioneta':
+        Player['Inventário'] = 'Baioneta'
+        if 'Baioneta' in Player['Inventário']:
+            Player['Attack'] += 50
