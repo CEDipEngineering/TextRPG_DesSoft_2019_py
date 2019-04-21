@@ -13,6 +13,7 @@ Player= {
     'Life': 200,
     'Attack': 20
 }
+inventario = []
 #%%
 
 #Funcão para rolar um D20
@@ -152,3 +153,18 @@ lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
 teste=RunCombat(CombatDict(lista_teste))
 pprint(teste)
 #    
+#%%
+
+def addInventario():
+    if position == Mapa['Bau']:
+        inventario.append('Baioneta')
+        if 'Baioneta' in inventario:
+            Player['Attack'] = 50 #30 de Attack adicionados
+    if position == Mapa['Choque']:
+        inventario.append('Chave')
+    if position == Mapa['PortaSecreta']:
+        inventario.append('Wolverine')
+        if 'Wolverine' in inventario:
+            Player['Life'] = 300
+            Player['Attack'] = 100
+    return inventario
