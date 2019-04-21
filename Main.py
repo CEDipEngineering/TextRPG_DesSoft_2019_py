@@ -13,8 +13,7 @@ with open('Mapa.txt','r') as Map:
 #pprint(Mapa)
 Player = {
     'Life':200,
-    'Attack':20,
-    'Inventário': []        
+    'Attack':20        
 }
 ask=input('Bem-vindo! Quer começar a jogar (s/n)? ')
 game_on = ask == 's'
@@ -27,9 +26,15 @@ if game_on:
     fn.Move('CalabouçoInicial')
 #    while game_on:
 #inventário:
+inventario = []
 Itens = ['Baioneta', 'Chave', 'Wolverine']
 for e in Itens:
-    if e == 'Baioneta':
-        Player['Inventário'] = 'Baioneta'
-        if 'Baioneta' in Player['Inventário']:
-            Player['Attack'] += 50
+    inventario.append(e)
+    if 'Baioneta' in inventario:
+        Player['Attack'] = 50 #30 de Attack adicionados
+    if 'Chave' in inventario:
+        True
+    if 'Wolverine' in inventario:
+        Player['Life'] = 300
+        Player['Attack'] = 100
+    
