@@ -1,0 +1,68 @@
+{
+    "Acido": [
+        "\n        Ao abrir a porta, um cheiro muito poderoso o domina.\n        Você não consegue resistir, e tosse incontrolavelmente por\n        alguns instantes. Quando recobra seu fôlego, percebe que\n        a sala em questão parece ser um tipo de chuveiro coletivo,\n        onde dezenas de chuveiros estão escorrendo um líquido transparente,\n        e levemente sujo. Você também observa que esse líquido parece ter\n        propriedades corrosivas, visto que o entorno de seu caminho agora\n        está escavado e afundado pelo que parece ter sido um fluxo incessante\n        de ácido. Provavelmente não é uma boa ideia tocar nisso.\n        Do outro lado, você vê uma porta de saída.\n        ",
+        [
+            "Sala3 (Avançar pela sala na direção da porta)",
+            "Sala2 (Voltar)"
+        ]
+    ],
+    "Bau": [
+        "\n        O baú é velho e enrustido. Ao abrí-lo, você\n        vê uma velha baioneta russa, usada na quarta guerra mundial,\n        e uma carta, que diz \"É perigoso ir sozinho. Leve isso.\".\n        ",
+        [
+            "Abrir a porta",
+            "Voltar"
+        ]
+    ],
+    "CalabouçoInicial": [
+        "\n        Você está num calabouço, escuro e úmido. \n        Não consegue ver muito longe.\n        Está com fome, e cansado.\n        Não se lembra como chegou aqui,\n        tudo que sabe, é seu nome, e que\n        algo, ou alguém o trouxe para cá.\n        Conforme recobra consciência, percebe\n        que suas mãos estão atadas.\n        Sem muito esforço, consegue libertar-se\n        de suas amarras e levantar-se.\n        ",
+        [
+            "Bau (Abre o baú no canto)",
+            "Corredor1 (Abrir a porta)"
+        ]
+    ],
+    "Choque": [
+        "\n        Nesta sala, antes mesmo de abrir a porta, você\n        percebe uma leve luz, vazando pelo entorno desta.\n        Resoluto, você abre a porta, e vê, \n        o que te parece uma tespetade em primeiro olhar,\n        mas na verdade não passam de bobinas de Tesla ativas.\n        Dezenas delas. Tantas, que a sala parece estar iluminada\n        somente pelos seus magníficos arcos elétricos.\n        Tão belos quanto mortais.\n        Ao fim da sala, parece haver uma porta de saída.\n        ",
+        [
+            "Sala3 (Avançar pela sala na direção da porta)",
+            "Sala2 (Voltar)"
+        ]
+    ],
+    "Corredor1": [
+        "\n        Agora saindo do calabouço, você se encontra\n        num corredor estreito. Você segue ele até uma curva\n        fechada para a direita. E então depara-se com uma\n        porta metálica e pesada. Muito enferrujada.\n        Nela está gravado:\n            \"Opasnost\"\n        O que será que isso significa?\n        ",
+        [
+            "Sala2 (Abrir a porta)",
+            "CalabouçoInicial (Voltar)"
+        ]
+    ],
+    "PortaSecreta": [
+        "\n        Passando pela porta, você encontra uma sala\n        muito estranaha, nela, todas as paredes são brancas,\n        tão brancas que parecem até iluminadas,\n        e sentado numa mesa no meio dessa sala, dois\n        rapazes atrás de mesas, estão fazendo alguma coisa,\n        cada um em seu laptop.\n        Quando um deles te percebe, ele diz para o outro,\n        num tom de sussurro, \"Ei Dip, acho que alguém escapou...\",        \n        E o outro responde, sem nem olhar, \"Pfft, você está brincando, Ed?\n        Ninguém nunca coseguiu escap--\" e antes de terminar sua frase,\n        seu colega o empurra com o cotovelo, alertando-o. Ele então\n        percebe sua presença, e um pouco desesperado, diz para você,\n        \"Ahhm.. Ah! Grande guerreiro! Você está só sonhando! Isso NÃO É REAL!\n        Não se preocupe! Tudo vai ficar bem!\" e ele tenta, sutilmente,\n        avisar seu colega; \"Rápido, tire ele daqui!\", e o outro colega responde,\n        \"Mas para onde eu o mando?\", e rapidamente é respondido \"Sei lá, só mande\n        ele pra longe daqui!\", eles então percebem que você ainda está lá, e que\n        agora está ficando um pouco impaciente, e então eles dizem, \"Feroz, ehhhh... ,lutador,\n        conquistador de, hmm... ahhmm... mutantes!, ehhhhh...., tome aqui esse objeto mágico que\n        faz alguma coisa legal!\", e ele toma da mesa uma miniatura de plástico humanóide, estranha,\n        e quando o faz, seu colega diz \"Eeeeiii! Esse é meu action figure do Wolverine! Você sabe\n        quanto isso custou!?\" e o outro responde com um rápido \"Cala a boca, você quer que ele nos\n        mate!?\" ele então, vira-se para você e diz: \"Poderoso guerreiro, agora, continue em sua busca,\n        , por favor, só não nos machuque\".\n        Eles então, o entregam essa miniatura de hominídeo, e você sente, suas feridas se fecham,\n        em frente a seus próprios olhos! Incrível!\n        ",
+        []
+    ],
+    "Radiacao": [
+        "\n        Você encontra uma sala completamente destruída.\n        Paredes cobertas por uma lama pesada e escura,\n        você só consegue enxergar graças a uma leve fluorescência\n        vindo de algumas formações rochosas azuis, parecidas com\n        enormes stalagmites de diamante saindo do chão.\n        A sala está fria e úmida. No fundo da sala você\n        vê uma porta. Ela parece ser a saída.\n        Porém entre você e a porta, existe um mar de rochas\n        fluorescentes e lama.\n        ",
+        [
+            "Sala3 (Avançar pela sala na direção da porta)",
+            "Fininho (Avançar com cuidado pelos cantos da sala na direção da porta)",
+            "Sala2 (Voltar)"
+        ]
+    ],
+    "Sala2": [
+        "\n        Agora livre dos seres mutantes estranhos, \n        você toma um momento para se acalmar.\n        Esta sala estranha é toda de concreto.\n        Nela, existem 3 portas. Todas de concreto.\n        A primeira, a sua esquerda, tem um símbolo\n        triangular amarelo, que você reconhece como\n        relacionado a radiação.\n        A segunda, à sua frente, tem um símbolo que você\n        reconhece como de perigo de ácidos.\n        E a terceira, à sua direita, você identifica como perigo de\n        choque elétrico em alta tensão.\n        ",
+        [
+            "Radiacao (Abrir a porta da esquerda)",
+            "Acido (Abrir a porta do centro) ",
+            "Choque (Abrir a porta da direita)",
+            "Corredor1 (Voltar)"
+        ]
+    ],
+    "Sala3": [
+        "\n        Entrando por essa porta, você chega num grande salão, nele, você vê uma enorme linha\n        de produção, agora há muito desativada, com centenas de peças diferentes espalhadas por\n        esteiras que dão voltas e voltas, como as entranhas de uma gigantesca fera mecânica.\n        No fundo da sala, você vê um terminal, ainda acesso, e uma escada, para o topo da fábrica.\n        ",
+        [
+            "Escada (Subir escada)",
+            "Terminal (Acessar terminal)",
+            "Radiacao (Abre a porta para a sala da radiação)",
+            "Acido (Abre a porta para a sala do ácido)",
+            "Choque (Abre a porta para a sala do choque)"
+        ]
+    ]
+}
