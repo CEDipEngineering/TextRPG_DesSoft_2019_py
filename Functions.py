@@ -46,20 +46,23 @@ def CombatDict(ListAttrMonsters):
 
 #Função para rodar o combate.
 def RunCombat(Player, Combat):
+    print('Opa! Parece que este lugar está cheio de monstros!')
+    time.sleep(1)
     Combat['Player']=Player # Coloca o jogador no dicionário
     fight_on=True
-    mortos=[]
+    mortos=''
     pprint(Combat)
     while fight_on:
-        for defunto in mortos:
-            if defunto in Combat:
-                del Combat[defunto]
+        if mortos in Combat:
+            del Combat[mortos]
         for combatant, attributes in Combat.items():
             if Combat[combatant]['Life']>0:
                 print('Agora é o turno de ' + combatant)
-                time.sleep(1)
+                time.sleep(2)
                 #Player Turn
                 if combatant == 'Player' and Player['Life']>0:
+                    if 'Wolverine' in Inventário:
+                        Player['Life']+=5
                     pprint(Combat)
                     ask=input('Quer atacar ou fugir? ')
                     # Fugir!
@@ -83,7 +86,7 @@ def RunCombat(Player, Combat):
                                 print('Acho que você escreveu errado; Esse alvo não existe, ou já morreu!')
                                 print('Tente escolher de novo.')
                 #Monster Turn
-                if combatant != 'Player':
+                if combatant != 'Player' and combatant['Life']>0:
                     Roll=RollNum()
                     if Roll>=5:
                         print(combatant + ' decidiu atacar você!')
@@ -91,7 +94,7 @@ def RunCombat(Player, Combat):
                     else:
                         print('{0} está confuso e passou seu turno procurando alguma coisa para fazer!'.format(combatant))
             else:
-                mortos.append(combatant)
+                mortos=combatant
                 
 #Recebe um dicionário de combate (ver CombatDict), e então roda o combate, 
 #até que todos os monstros morram, o player morra, ou o player fuja.  
@@ -120,7 +123,7 @@ def Attack(Attacker, Target, is_player):
             outputText='O rolamento dele foi ' + str(Roll) + ' causando ' + str(Attacker['Attack']) + ' de dano!' 
         else: #Erro
             outputText='Você desviou!'
-        time.sleep(1)
+        time.sleep(2)
         print(outputText)
     return None
 #Recebe dois dicionários, um com os dados do atacante, e outro do atacado,
@@ -143,7 +146,7 @@ def Move(key, Mapa, Posicao, Player, Inventario):
             print('Terminal trancado...insira sua chave.')
             return 1
         else:
-            print('PARABÉNS! Vc é o único sobrevivente do nosso desafio.')
+            print('Parabéns! Você é o primeiro sobrevivente da fábrica.')
             return 0
     elif key=='PortaSecreta':
         AddInventario(key, Player, Inventario)
@@ -152,20 +155,26 @@ def Move(key, Mapa, Posicao, Player, Inventario):
     elif key in Mapa:
         Posicao.append(key)
         if key=='Sala2':
-            lista_monstros=[[100,5,'goblin'],[50,20,'tarantula'],[20,2,'rato']]
-            luta=RunCombat(Player, CombatDict(lista_monstros))
-            print(luta)
+            lista_monstros=[[20,2,'mutante_aleijado'],
+                            [50,15,'mutatante_quatro_braços'],
+                            [30,5,'mutante_normal']]
+            RunCombat(Player, CombatDict(lista_monstros))
         elif key=='Sala3':
-            lista_monstros=[[200,30,'Jason']]
-            luta=RunCombat(Player, CombatDict(lista_monstros))
-            print(luta)
+            lista_monstros=[[20,2,'mutante_aleijado'],
+                            [20,2,'mutante_aleijado2'],
+                            [30,5,'mutante_normal'],
+                            [20,2,'mutante_aleijado3'],
+                            [50,15,'mutatante_quatro_braços'],
+                            [20,2,'mutante_aleijado4'],
+                            [50,15,'mutatante_quatro_braços2']]
+            RunCombat(Player, CombatDict(lista_monstros))
     else:
         print('Comando inválido')
         return 1
     
     info=Mapa[key]
     print(info[0])
-    time.sleep(1)
+    time.sleep(5)
     print('Suas opções são {0}. (Coloque sua resposta exatamente como está escrito, ignorando espaços e o que estiver em parênteses)'.format(info[1]))
     
     return 1

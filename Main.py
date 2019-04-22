@@ -12,8 +12,8 @@ with open('Mapa.txt','r') as Map:
     
 #variaveis globais  
 Player = {
-    'Life':200,
-    'Attack':20        
+    'Life':150,
+    'Attack':5        
 }
 
 Inventario=[]
@@ -26,8 +26,7 @@ ask=input('Bem-vindo! Quer começar a jogar (s/n)? ')
 if ask=='s':
     PlayerName=input('Sábia escolha! Qual seu nome? ')
     print('Bem vindo, {0}, à maior aventura de sua vida!'.format(PlayerName))
-    key='CalabouçoInicial'
-    game_on = fn.Move(key, Mapa, Posicao, Player, Inventario)
+    game_on = fn.Move('CalabouçoInicial', Mapa, Posicao, Player, Inventario)
     while game_on:
         key=input('Digite sua opção:')
         game_on = fn.Move(key, Mapa, Posicao, Player, Inventario)

@@ -1,4 +1,5 @@
-{
+import json
+Mapa = {
 'CalabouçoInicial': [
         '''
         Você está num calabouço, escuro e úmido. 
@@ -11,8 +12,11 @@
         que suas mãos estão atadas.
         Sem muito esforço, consegue libertar-se
         de suas amarras e levantar-se.
+        Examinando a sala em seu entorno,
+        percebe que há uma porta enferrujada e entreaberta,
+        assim como um baú no canto da sala.
         ''',
-        ['Bau (Abre o baú no canto)',
+        ['Bau (Vai até o baú no canto, e o abre)',
          'Corredor1 (Abrir a porta)']
     ],
 'Corredor1': [
@@ -22,7 +26,7 @@
         fechada para a direita. E então depara-se com uma
         porta metálica e pesada. Muito enferrujada.
         Nela está gravado:
-            'Опасность.'
+            'Opasnost'
         O que será que isso significa?
         ''',
         ['Sala2 (Abrir a porta)',
@@ -90,12 +94,12 @@
         somente pelos seus magníficos arcos elétricos.
         Tão belos quanto mortais. Porém, no meio de tantos perigos,
         surge uma esperança, em um canto mais escuro em baixo e no lado esquerdo
-        do galpão, reflete um brilho. Sem se hesitar, você se aproxima desse então 
+        do galpão, reflete um brilho. Sem hesitar, você se aproxima desse então 
         objeto brilhante e o mesmo, a cada vez mais que se aproxima,
         se revela uma chave, e perto dela há uma mensagem cravada na parede
-        próxima: "Используйте, чтобы уйти отсюда.", sem ter ideia do que 
-        siginifica, você decide guardá-la pois, por que iriam escrever alguma coisa
-        para algo sem relevância?
+        próxima: 'Ispol'zuy, chtoby vybrat'sya otsyuda', sem ter ideia do que 
+        siginifica, você pode decidir guardá-la pois. Por que iriam escrever alguma coisa
+        se não fosse importante?
         Ao fim da sala, parece haver uma porta de saída.
         ''',
         ['Pegar (Pegar chave)', 'Sala3 (Avançar pela sala na direção da porta)',
@@ -155,3 +159,8 @@
          'Voltar'],
     ],
 }
+#Use este pedaço para atualizar o mapa.txt.
+#with open('Mapa.txt','w') as Mapa_Txt:
+#    Mapa_Json=json.dumps(Mapa,ensure_ascii=False,indent=4)
+#    Mapa_Txt.write(Mapa_Json) 
+    
