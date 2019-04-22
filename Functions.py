@@ -53,48 +53,52 @@ def RunCombat(Player, Combat, Inventario):
     mortos=''
     pprint(Combat)
     while fight_on:
-        if mortos in Combat:
-            del Combat[mortos]
-        for combatant, attributes in Combat.items():
-            if Combat[combatant]['Life']>0:
-                print('Agora é o turno de ' + combatant)
-                time.sleep(2)
-                #Player Turn
-                if combatant == 'Player' and Player['Life']>0:
-                    if 'Wolverine' in Inventario:
-                        Player['Life']+=5
-                    pprint(Combat)
-                    ask=input('Quer atacar ou fugir? ')
-                    # Fugir!
-                    if ask == 'fugir':
-                        if RollNum()>=11:
-                            fight_on=False
-                            return 'Você escapou!'
-                        else:
-                            print('Você não conseguiu escapar!')
-                    
-                    
-                    #Não fugir!
-                    else:
-                        choose=True
-                        while choose:
-                            target=input('Quem você gostaria de atacar? ')
-                            if target in Combat:
-                                Attack(Combat['Player'] ,Combat[target], True)
-                                choose=False
+        if len(Combat)>1:
+            if mortos in Combat:
+                del Combat[mortos]
+            for combatant, attributes in Combat.items():
+                if Combat[combatant]['Life']>0:
+                    print('Agora é o turno de ' + combatant)
+                    time.sleep(2)
+                    #Player Turn
+                    if combatant == 'Player' and Player['Life']>0:
+                        if 'Wolverine' in Inventario:
+                            Player['Life']+=5
+                        pprint(Combat)
+                        ask=input('Quer atacar ou fugir? ')
+                        # Fugir!
+                        if ask == 'fugir':
+                            if RollNum()>=11:
+                                fight_on=False
+                                print('Você escapou!')
+                                return None 
                             else:
-                                print('Acho que você escreveu errado; Esse alvo não existe, ou já morreu!')
-                                print('Tente escolher de novo.')
-                #Monster Turn
-                if combatant != 'Player':
-                    Roll=RollNum()
-                    if Roll>=5:
-                        print(combatant + ' decidiu atacar você!')
-                        Attack(Combat[combatant],Combat['Player'],False)
-                    else:
-                        print('{0} está confuso e passou seu turno procurando alguma coisa para fazer!'.format(combatant))
-            else:
-                mortos=combatant
+                                print('Você não conseguiu escapar!')
+                        
+                        
+                        #Não fugir!
+                        else:
+                            choose=True
+                            while choose:
+                                target=input('Quem você gostaria de atacar? ')
+                                if target in Combat:
+                                    Attack(Combat['Player'] ,Combat[target], True)
+                                    choose=False
+                                else:
+                                    print('Acho que você escreveu errado; Esse alvo não existe, ou já morreu!')
+                                    print('Tente escolher de novo.')
+                    #Monster Turn
+                    if combatant != 'Player':
+                        Roll=RollNum()
+                        if Roll>=5:
+                            print(combatant + ' decidiu atacar você!')
+                            Attack(Combat[combatant],Combat['Player'],False)
+                        else:
+                            print('{0} está confuso e passou seu turno procurando alguma coisa para fazer!'.format(combatant))
+                else:
+                    mortos=combatant
+        else:
+            fight_on=False
                 
 #Recebe um dicionário de combate (ver CombatDict), e então roda o combate, 
 #até que todos os monstros morram, o player morra, ou o player fuja.  
@@ -157,7 +161,7 @@ def Move(key, Mapa, Posicao, Player, Inventario):
         Posicao.append(key)
         if key=='Sala2':
             lista_monstros=[[20,2,'mutante_aleijado'],
-                            [50,15,'mutatante_quatro_braços'],
+                            [50,15,'mutante_quatro_braços'],
                             [30,5,'mutante_normal']]
             RunCombat(Player, CombatDict(lista_monstros), Inventario)
         elif key=='Sala3':
@@ -165,9 +169,9 @@ def Move(key, Mapa, Posicao, Player, Inventario):
                             [20,2,'mutante_aleijado2'],
                             [30,5,'mutante_normal'],
                             [20,2,'mutante_aleijado3'],
-                            [50,15,'mutatante_quatro_braços'],
+                            [50,15,'mutante_quatro_braços'],
                             [20,2,'mutante_aleijado4'],
-                            [50,15,'mutatante_quatro_braços2']]
+                            [50,15,'mutante_quatro_braços2']]
             RunCombat(Player, CombatDict(lista_monstros), Inventario)
     else:
         print('Comando inválido')

@@ -177,7 +177,7 @@ Mapa = {
         ['Voltar'],
     ],
 }
-#Use este pedaço para atualizar o mapa.txt, caso faça alterações.
+#Use este pedaço para atualizar o mapa.txt.
 #with open('Mapa.txt','w') as Mapa_Txt:
 #    Mapa_Json=json.dumps(Mapa,ensure_ascii=False,indent=4)
 #    Mapa_Txt.write(Mapa_Json) 

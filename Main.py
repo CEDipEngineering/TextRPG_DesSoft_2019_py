@@ -47,5 +47,5 @@ if ask=='s':
             game_on=bool(bool_var)
             
 
-print('Ok, até a próxima! ')#:(
+print('Ok, até a próxima! ')
 
