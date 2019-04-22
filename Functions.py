@@ -45,7 +45,7 @@ def CombatDict(ListAttrMonsters):
 #%%
 
 #Função para rodar o combate.
-def RunCombat(Player, Combat):
+def RunCombat(Player, Combat, Inventario):
     print('Opa! Parece que este lugar está cheio de monstros!')
     time.sleep(1)
     Combat['Player']=Player # Coloca o jogador no dicionário
@@ -61,7 +61,7 @@ def RunCombat(Player, Combat):
                 time.sleep(2)
                 #Player Turn
                 if combatant == 'Player' and Player['Life']>0:
-                    if 'Wolverine' in Inventário:
+                    if 'Wolverine' in Inventario:
                         Player['Life']+=5
                     pprint(Combat)
                     ask=input('Quer atacar ou fugir? ')
@@ -159,7 +159,7 @@ def Move(key, Mapa, Posicao, Player, Inventario):
             lista_monstros=[[20,2,'mutante_aleijado'],
                             [50,15,'mutatante_quatro_braços'],
                             [30,5,'mutante_normal']]
-            RunCombat(Player, CombatDict(lista_monstros))
+            RunCombat(Player, CombatDict(lista_monstros), Inventario)
         elif key=='Sala3':
             lista_monstros=[[20,2,'mutante_aleijado'],
                             [20,2,'mutante_aleijado2'],
@@ -168,7 +168,7 @@ def Move(key, Mapa, Posicao, Player, Inventario):
                             [50,15,'mutatante_quatro_braços'],
                             [20,2,'mutante_aleijado4'],
                             [50,15,'mutatante_quatro_braços2']]
-            RunCombat(Player, CombatDict(lista_monstros))
+            RunCombat(Player, CombatDict(lista_monstros), Inventario)
     else:
         print('Comando inválido')
         return 1
