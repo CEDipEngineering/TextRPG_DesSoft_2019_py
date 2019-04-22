@@ -171,13 +171,13 @@ Mapa = {
         foi que você perdeu? Aposto que foi lá perto da sala 2.
         Em qual setor você trabalhava mesmo? Radiação, ou Choque?
         Nunca me lembro. Bom. Acho que é isso então. Não tem cara de 
-        que vou sair daqui tão cedo, então... 
+        que vou sair daqui tão cedo, e não estou nas melhores, então... 
         Se ver minha esposa em algum lugar, diga que a amo."
         ''',
         ['Voltar'],
     ],
 }
-#Use este pedaço para atualizar o mapa.txt.
+#Use este pedaço para atualizar o mapa.txt, caso faça alterações.
 #with open('Mapa.txt','w') as Mapa_Txt:
 #    Mapa_Json=json.dumps(Mapa,ensure_ascii=False,indent=4)
 #    Mapa_Txt.write(Mapa_Json) 

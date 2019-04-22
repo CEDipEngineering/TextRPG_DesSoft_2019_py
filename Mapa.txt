@@ -65,5 +65,11 @@
             "Pegar (Pegar baioneta)",
             "Voltar"
         ]
+    ],
+    "Escada": [
+        "\n        Subindo a escada, você chega no topo da fábrica.\n        Daí, você consegue ver uma cidade enorme em seu entorno.\n        Toda em ruínas. De vez em quando passa um mutante correndo\n        de uma lado para outro numa rua. Carros destruídos \n        populam a paisagem, agora recoberta por vegetação.\n        Ao seu lado, um esqueleto, e na mão dele uma carta, que diz\n        o seguinte: \"Droga Michael, te disse para não me esperar.\n        Agora olha o que foi acontecer. E a chave do terminal? Onde\n        foi que você perdeu? Aposto que foi lá perto da sala 2.\n        Em qual setor você trabalhava mesmo? Radiação, ou Choque?\n        Nunca me lembro. Bom. Acho que é isso então. Não tem cara de \n        que vou sair daqui tão cedo, e não estou nas melhores, então... \n        Se ver minha esposa em algum lugar, diga que a amo.\"\n        ",
+        [
+            "Voltar"
+        ]
     ]
 }

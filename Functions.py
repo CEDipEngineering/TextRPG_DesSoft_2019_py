@@ -210,7 +210,7 @@ def AddInventario(key, Player, Inventario):
     return Inventario
 
 #%%
-
+#Testes abaixo. Não mexer... ?
 #Posicao=[Mapa['CalabouçoInicial']]
 #print(Posicao)
 #x = Move(input())
