@@ -3,13 +3,13 @@
         "\n        Ao abrir a porta, um cheiro muito poderoso o domina.\n        Você não consegue resistir, e tosse incontrolavelmente por\n        alguns instantes. Quando recobra seu fôlego, percebe que\n        a sala em questão parece ser um tipo de chuveiro coletivo,\n        onde dezenas de chuveiros estão escorrendo um líquido transparente,\n        e levemente sujo. Você também observa que esse líquido parece ter\n        propriedades corrosivas, visto que o entorno de seu caminho agora\n        está escavado e afundado pelo que parece ter sido um fluxo incessante\n        de ácido. Provavelmente não é uma boa ideia tocar nisso.\n        Do outro lado, você vê uma porta de saída.\n        ",
         [
             "Sala3 (Avançar pela sala na direção da porta)",
-            "Sala2 (Voltar)"
+            "Voltar (Sala2)"
         ]
     ],
     "Bau": [
         "\n        O baú é velho e enrustido. Ao abrí-lo, você\n        vê uma velha baioneta russa, usada na quarta guerra mundial,\n        e uma carta, que diz \"É perigoso ir sozinho. Leve isso.\".\n        ",
         [
-            "Abrir a porta",
+            "Pegar (Pegar baioneta)",
             "Voltar"
         ]
     ],
@@ -21,17 +21,18 @@
         ]
     ],
     "Choque": [
-        "\n        Nesta sala, antes mesmo de abrir a porta, você\n        percebe uma leve luz, vazando pelo entorno desta.\n        Resoluto, você abre a porta, e vê, \n        o que te parece uma tespetade em primeiro olhar,\n        mas na verdade não passam de bobinas de Tesla ativas.\n        Dezenas delas. Tantas, que a sala parece estar iluminada\n        somente pelos seus magníficos arcos elétricos.\n        Tão belos quanto mortais.\n        Ao fim da sala, parece haver uma porta de saída.\n        ",
+        "\n        Nesta sala, antes mesmo de abrir a porta, você\n        percebe uma leve luz, vazando pelo entorno desta.\n        Resoluto, você abre a porta, e vê, \n        o que te parece uma tempestade em primeiro olhar,\n        mas na verdade não passam de bobinas de Tesla ativas.\n        Dezenas delas. Tantas, que a sala parece estar iluminada\n        somente pelos seus magníficos arcos elétricos.\n        Tão belos quanto mortais.\n        Ao fim da sala, parece haver uma porta de saída.\n        ",
         [
+            "Pegar (Pegar chave)",
             "Sala3 (Avançar pela sala na direção da porta)",
-            "Sala2 (Voltar)"
+            "Voltar (Sala2)"
         ]
     ],
     "Corredor1": [
         "\n        Agora saindo do calabouço, você se encontra\n        num corredor estreito. Você segue ele até uma curva\n        fechada para a direita. E então depara-se com uma\n        porta metálica e pesada. Muito enferrujada.\n        Nela está gravado:\n            \"Opasnost\"\n        O que será que isso significa?\n        ",
         [
             "Sala2 (Abrir a porta)",
-            "CalabouçoInicial (Voltar)"
+            "Voltar (Calabouço Inicial)"
         ]
     ],
     "PortaSecreta": [
@@ -43,7 +44,7 @@
         [
             "Sala3 (Avançar pela sala na direção da porta)",
             "Fininho (Avançar com cuidado pelos cantos da sala na direção da porta)",
-            "Sala2 (Voltar)"
+            "Voltar (Sala2)"
         ]
     ],
     "Sala2": [
@@ -52,7 +53,7 @@
             "Radiacao (Abrir a porta da esquerda)",
             "Acido (Abrir a porta do centro) ",
             "Choque (Abrir a porta da direita)",
-            "Corredor1 (Voltar)"
+            "Voltar (Corredor1)"
         ]
     ],
     "Sala3": [

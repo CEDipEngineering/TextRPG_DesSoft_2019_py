@@ -9,32 +9,27 @@ from pprint import pprint
 import json
 with open('Mapa.txt','r') as Map:
     conteudo=Map.read()
-    Mapa=json.loads(conteudo)
-#pprint(Mapa)
+    
+#variaveis globais  
 Player = {
     'Life':200,
     'Attack':20        
 }
+
+Inventario=[]
+Posicao=[]
+Mapa=json.loads(conteudo)
+
+#game
 ask=input('Bem-vindo! Quer começar a jogar (s/n)? ')
-game_on = ask == 's'
-if not game_on:
-    print('Ok, até a próxima! ')
-if game_on:
+ 
+if ask=='s':
     PlayerName=input('Sábia escolha! Qual seu nome? ')
     print('Bem vindo, {0}, à maior aventura de sua vida!'.format(PlayerName))
-    position=[]
-    fn.Move('CalabouçoInicial')
-#    while game_on:
-#inventário:
-inventario = []
-Itens = ['Baioneta', 'Chave', 'Wolverine']
-for e in Itens:
-    inventario.append(e)
-    if 'Baioneta' in inventario:
-        Player['Attack'] = 50 #30 de Attack adicionados
-    if 'Chave' in inventario:
-        True
-    if 'Wolverine' in inventario:
-        Player['Life'] = 300
-        Player['Attack'] = 100
-    
+    key='CalabouçoInicial'
+    game_on = fn.Move(key, Mapa, Posicao, Player, Inventario)
+    while game_on:
+        key=input('Digite sua opção:')
+        game_on = fn.Move(key, Mapa, Posicao, Player, Inventario)
+
+print('Ok, até a próxima! ')

@@ -6,14 +6,10 @@ Fazer um jogo de RPG de texto estilo anos 80
 """
 import random 
 from pprint import pprint
-#from Mapa import Mapa
+#from Main import Mapa
 #from Main import Player
 import time
-Player= {
-    'Life': 200,
-    'Attack': 20
-}
-inventario = []
+
 #%%
 
 #Funcão para rolar um D20
@@ -133,38 +129,75 @@ def Attack(Attacker, Target, is_player):
 
 #%%
     
-def Move(key):
-    position=Mapa[key]
-    print(position[0])
+def Move(key, Mapa, Posicao, Player, Inventario):
+    
+    if key=='Voltar':
+        if len(Posicao) > 1:
+            Posicao.pop()
+        key=Posicao[-1]
+    elif key=='Pegar':
+        key=Posicao[-1]
+        AddInventario(key, Player, Inventario)
+    elif key=='Terminal':
+        if 'Chave' not in Inventario:
+            print('Terminal trancado...insira sua chave.')
+            return 1
+        else:
+            print('PARABÉNS! Vc é o único sobrevivente do nosso desafio.')
+            return 0
+    elif key=='Quit':
+        return 0
+    elif key in Mapa:
+        Posicao.append(key)
+    else:
+        print('Comando inválido')
+        return 1
+    
+    info=Mapa[key]
+    print(info[0])
     time.sleep(1)
-    print('Suas opções são {0}. (Coloque sua resposta exatamente como está escrito, ignorando espaços e o que estiver em parênteses)'.format(position[1]))
-    return None
+    print('Suas opções são {0}. (Coloque sua resposta exatamente como está escrito, ignorando espaços e o que estiver em parênteses)'.format(info[1]))
+    
+    return 1
 
 
 #%%
 
-#position=[Mapa['CalabouçoInicial']]
-#print(position)
+#Posicao=[Mapa['CalabouçoInicial']]
+#print(Posicao)
 #x = Move(input())
 #while Move(x)!=1:
 #    x = Move(input())
-#print(position)
-lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
-teste=RunCombat(CombatDict(lista_teste))
-pprint(teste)
+#print(Posicao)
+#lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
+#teste=RunCombat(CombatDict(lista_teste))
+#pprint(teste)
 #    
 #%%
 
-def addInventario():
-    if position == Mapa['Bau']:
-        inventario.append('Baioneta')
-        if 'Baioneta' in inventario:
-            Player['Attack'] = 50 #30 de Attack adicionados
-    if position == Mapa['Choque']:
-        inventario.append('Chave')
-    if position == Mapa['PortaSecreta']:
-        inventario.append('Wolverine')
-        if 'Wolverine' in inventario:
-            Player['Life'] = 300
-            Player['Attack'] = 100
-    return inventario
+def AddInventario(key, Player, Inventario):
+    if key == 'Bau':
+        if 'Baioneta' not in Inventario:
+            Inventario.append('Baioneta')
+            Player['Attack'] += 30 #30 de Attack adicionados
+            print('A Baioneta é uma arma que aumenta o seu poder de ataque em 30 pts, isso deve te facilitar para os breves combates')
+        else:
+            print('Você já possui esse item!')
+    
+    elif key == 'Choque':
+        if 'Chave' not in Inventario:
+            Inventario.append('Chave')
+            print('Agora você tem a chave, não deve encontrar mais nenhuma frustração quando achar a saída')
+        else: 
+            print('Aparentemente não há mais chaves por aqui...')
+    
+    elif key == 'PortaSecreta':
+        if 'Wolverine' not in Inventario:
+            Inventario.append('Wolverine')
+            Player['Life'] += 100
+            Player['Attack'] += 70
+            print('Meu deus! Esse pequeno boneco trouxe benefícios na sua "Life" e poder de "Attack", você parece até um deus agora! Parabéns!')
+        else:
+            print('Ops...Não tem mais nada na sala dos... Ish... Quase falei, mas você tem que sair daqui, e rápido! Meu guerreiro...')
+    
+    return Inventario

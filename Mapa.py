@@ -26,7 +26,7 @@
         O que será que isso significa?
         ''',
         ['Sala2 (Abrir a porta)',
-         'CalabouçoInicial (Voltar)'],
+         'Voltar (CalabouçoInicial)'],
     ],
 'Sala2': [
         '''
@@ -45,7 +45,7 @@
          ['Radiacao (Abrir a porta da esquerda)',
          'Acido (Abrir a porta do centro) ',
          'Choque (Abrir a porta da direita)',
-         'Corredor1 (Voltar)'],
+         'Voltar (Corredor1)'],
     ],
 'Radiacao': [
         '''
@@ -61,7 +61,7 @@
         ''',
         ['Sala3 (Avançar pela sala na direção da porta)',
          'Fininho (Avançar com cuidado pelos cantos da sala na direção da porta)',
-         'Sala2 (Voltar)'],
+         'Voltar (Sala2)'],
     ],
 'Acido': [
         '''
@@ -77,14 +77,14 @@
         Do outro lado, você vê uma porta de saída.
         ''',
         ['Sala3 (Avançar pela sala na direção da porta)',
-         'Sala2 (Voltar)'],
+         'Voltar (Sala2)'],
     ],
 'Choque': [
         '''
         Nesta sala, antes mesmo de abrir a porta, você
         percebe uma leve luz, vazando pelo entorno desta.
         Resoluto, você abre a porta, e vê, 
-        o que parece uma tespetade em primeiro olhar,
+        o que parece uma tempestade em primeiro olhar,
         mas na verdade não passam de bobinas de Tesla ativas.
         Dezenas delas. Tantas, que a sala parece estar iluminada
         somente pelos seus magníficos arcos elétricos.
@@ -98,8 +98,8 @@
         para algo sem relevância?
         Ao fim da sala, parece haver uma porta de saída.
         ''',
-        ['Sala3 (Avançar pela sala na direção da porta)',
-         'Sala2 (Voltar)'],
+        ['Pegar (Pegar chave)', 'Sala3 (Avançar pela sala na direção da porta)',
+         'Voltar (Sala2)'],
     ],
 'PortaSecreta': [
         '''
@@ -151,11 +151,7 @@
         vê uma velha baioneta russa, usada na quarta guerra mundial,
         e uma carta, que diz "É perigoso ir sozinho. Leve isso.".
         ''',
-        ['Abrir a porta',
+        ['Pegar (Pegar baioneta)',
          'Voltar'],
     ],
 }
-
-
-
-
