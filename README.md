@@ -10,13 +10,15 @@ Você é um ex-operário, na recém-fundada nova União Soviética,
 no ano de 2177. Um dia, contudo, acordou desnorteado num calabouço dentro de um ambiente industrial
 desconhecido. Sua missão é sair deste complexo* e descobrir o que aconteceu com o mundo**.
 Você enfrentará mutantes loucos, alterados por radiação, e perigos do velho mundo.
-Boa sorte
+Boa sorte.
 
 Inspirado nas séries de Jogos Fallout(c) e S.T.A.L.K.E.R(c).
 
 
 Carlos Eduardo Dip - Eng. Mecânica
-Edgard Ortiz Neto - Eng. Mecânica
+
+
+Edgard Ortiz Neto - Eng. Computação
 
 
 
