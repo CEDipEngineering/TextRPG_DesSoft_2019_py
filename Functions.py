@@ -45,7 +45,7 @@ def CombatDict(ListAttrMonsters):
 #%%
 
 #Função para rodar o combate.
-def RunCombat(Combat):
+def RunCombat(Player, Combat):
     Combat['Player']=Player # Coloca o jogador no dicionário
     fight_on=True
     mortos=[]
@@ -145,10 +145,20 @@ def Move(key, Mapa, Posicao, Player, Inventario):
         else:
             print('PARABÉNS! Vc é o único sobrevivente do nosso desafio.')
             return 0
+    elif key=='PortaSecreta':
+        AddInventario(key, Player, Inventario)
     elif key=='Quit':
         return 0
     elif key in Mapa:
         Posicao.append(key)
+        if key=='Sala2':
+            lista_monstros=[[100,5,'goblin'],[50,20,'tarantula'],[20,2,'rato']]
+            luta=RunCombat(Player, CombatDict(lista_monstros))
+            print(luta)
+        elif key=='Sala3':
+            lista_monstros=[[200,30,'Jason']]
+            luta=RunCombat(Player, CombatDict(lista_monstros))
+            print(luta)
     else:
         print('Comando inválido')
         return 1
@@ -159,20 +169,7 @@ def Move(key, Mapa, Posicao, Player, Inventario):
     print('Suas opções são {0}. (Coloque sua resposta exatamente como está escrito, ignorando espaços e o que estiver em parênteses)'.format(info[1]))
     
     return 1
-
-
-#%%
-
-#Posicao=[Mapa['CalabouçoInicial']]
-#print(Posicao)
-#x = Move(input())
-#while Move(x)!=1:
-#    x = Move(input())
-#print(Posicao)
-#lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
-#teste=RunCombat(CombatDict(lista_teste))
-#pprint(teste)
-#    
+  
 #%%
 
 def AddInventario(key, Player, Inventario):
@@ -201,3 +198,16 @@ def AddInventario(key, Player, Inventario):
             print('Ops...Não tem mais nada na sala dos... Ish... Quase falei, mas você tem que sair daqui, e rápido! Meu guerreiro...')
     
     return Inventario
+
+#%%
+
+#Posicao=[Mapa['CalabouçoInicial']]
+#print(Posicao)
+#x = Move(input())
+#while Move(x)!=1:
+#    x = Move(input())
+#print(Posicao)
+#lista_teste=[[100,5,'goblin'],[50,2,'criança'],[20,1,'rato']]
+#teste=RunCombat(CombatDict(lista_teste))
+#pprint(teste)
+#  
