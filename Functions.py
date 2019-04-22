@@ -86,7 +86,7 @@ def RunCombat(Player, Combat):
                                 print('Acho que você escreveu errado; Esse alvo não existe, ou já morreu!')
                                 print('Tente escolher de novo.')
                 #Monster Turn
-                if combatant != 'Player' and combatant['Life']>0:
+                if combatant != 'Player':
                     Roll=RollNum()
                     if Roll>=5:
                         print(combatant + ' decidiu atacar você!')
@@ -147,7 +147,8 @@ def Move(key, Mapa, Posicao, Player, Inventario):
             return 1
         else:
             print('Parabéns! Você é o primeiro sobrevivente da fábrica.')
-            return 0
+            print('Agora você consegue teleportar para onde quiser! Só escolha entre {} estas opções'.format(Mapa.keys()))
+            return -1
     elif key=='PortaSecreta':
         AddInventario(key, Player, Inventario)
     elif key=='Quit':
@@ -202,9 +203,9 @@ def AddInventario(key, Player, Inventario):
             Inventario.append('Wolverine')
             Player['Life'] += 100
             Player['Attack'] += 70
-            print('Meu deus! Esse pequeno boneco trouxe benefícios na sua "Life" e poder de "Attack", você parece até um deus agora! Parabéns!')
+            print('Quem diria! Esse pequeno boneco trouxe benefícios à sua vida e poder de ataque, você está acima dos meros mortais agora!')
         else:
-            print('Ops...Não tem mais nada na sala dos... Ish... Quase falei, mas você tem que sair daqui, e rápido! Meu guerreiro...')
+            print('Ops...Não tem mais nada na sala dos... Ish... Quase falei, mas você tem que sair daqui, e rápido!')
     
     return Inventario
 

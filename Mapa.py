@@ -158,6 +158,24 @@ Mapa = {
         ['Pegar (Pegar baioneta)',
          'Voltar'],
     ],
+'Escada': [
+        '''
+        Subindo a escada, você chega no topo da fábrica.
+        Daí, você consegue ver uma cidade enorme em seu entorno.
+        Toda em ruínas. De vez em quando passa um mutante correndo
+        de uma lado para outro numa rua. Carros destruídos 
+        populam a paisagem, agora recoberta por vegetação.
+        Ao seu lado, um esqueleto, e na mão dele uma carta, que diz
+        o seguinte: "Droga Michael, te disse para não me esperar.
+        Agora olha o que foi acontecer. E a chave do terminal? Onde
+        foi que você perdeu? Aposto que foi lá perto da sala 2.
+        Em qual setor você trabalhava mesmo? Radiação, ou Choque?
+        Nunca me lembro. Bom. Acho que é isso então. Não tem cara de 
+        que vou sair daqui tão cedo, então... 
+        Se ver minha esposa em algum lugar, diga que a amo."
+        ''',
+        ['Voltar'],
+    ],
 }
 #Use este pedaço para atualizar o mapa.txt.
 #with open('Mapa.txt','w') as Mapa_Txt:
